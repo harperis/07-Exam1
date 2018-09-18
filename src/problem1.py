@@ -2,8 +2,8 @@
 Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Isaac Harper.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -58,6 +58,16 @@ def run_test_problem1a():
 
 
 def problem1a(rectangle, square, thickness, window):
+    rectangle.attach_to(window)
+    square.attach_to(window)
+    rectangle_side = rg.Line(rectangle.get_upper_left_corner(), rectangle.get_upper_right_corner())
+    midpoint = rectangle_side.get_midpoint()
+    line = rg.Line(square.center, midpoint)
+    line.color = rectangle.outline_color
+    line.thickness = thickness
+    line.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
     """
     See   problem1a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -89,7 +99,7 @@ def problem1a(rectangle, square, thickness, window):
       :type window:    rg.RoseWindow
     """
     # --------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # Done: 2. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
 
@@ -123,6 +133,14 @@ def run_test_problem1b():
 
 
 def problem1b(point, win, width, height, color):
+    corner1 = rg.Point(point.x - (width / 2), point.y)
+    corner2 = rg.Point(point.x + (width / 2), (point.y + height))
+    oval = rg.Ellipse(corner1, corner2)
+    oval.attach_to(win)
+    oval.fill_color = color
+    point.attach_to(win)
+    win.render()
+    win.continue_on_mouse_click()
     """
     See   problem1b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -137,7 +155,7 @@ def problem1b(point, win, width, height, color):
       Draws an rg.Ellipse for which:
         -- The topmost point of the rg.Ellipse is the given rg.Point.
         -- The width of the rg.Ellipse is the given width.
-        -- The height of the rg.Ellipse is the given width.
+        -- The height of the rg.Ellipse is the given height.
         -- The fill color of the rg.Ellipse is the given color.
       Must render but   ** NOT close **   the window.
 

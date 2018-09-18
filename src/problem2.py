@@ -2,8 +2,8 @@
 Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Isaac Harper.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import testing_helper
 import time
@@ -20,7 +20,7 @@ def main():
 def problem2a_testing():
     """ Tests the   sum_of_digits_of_sum_of_factors   function. """
     ############################################################################
-    #  TODO: 2. Implement this TEST function.  See the IMPORTANT NOTE below.
+    #  Done: 2. Implement this TEST function.  See the IMPORTANT NOTE below.
     #     This problem TESTS the    sum_of_digits_of_sum_of_factors    function
     #     that is defined below.  Include at least **   4   ** tests.
     #     Use the usual format:
@@ -31,9 +31,9 @@ def problem2a_testing():
     #       print('Expected:', expected)
     #       print('Actual:  ', actual)
     #
-    #  TODO (continued): IMPORTANT NOTE:
-    #  TODO (continued):   The function that you are TESTING is PURPOSELY
-    #  TODO (continued)    NOT implemented.  Do NOT implement it.  That is,
+    #  Done (continued): IMPORTANT NOTE:
+    #  Done (continued):   The function that you are TESTING is PURPOSELY
+    #  Done (continued)    NOT implemented.  Do NOT implement it.  That is,
     #                   do NOT implement the
     #                           sum_of_digits_of_sum_of_factors
     #                   function!  Just write these TESTS of that function
@@ -44,6 +44,30 @@ def problem2a_testing():
     print('---------------------------------------------------------')
     print('Testing the   sum_of_digits_of_sum_of_factors   function:')
     print('---------------------------------------------------------')
+    # Test 1
+    expected = 24
+    answer = sum_of_digits_of_sum_of_factors(15)
+    print()
+    print('Test 1: Expected', expected)
+    print('actual', answer)
+    # Test 2
+    expected = 18
+    answer = sum_of_digits_of_sum_of_factors(10)
+    print()
+    print('Test 2: Expected', expected)
+    print('Actual', answer)
+    # Test 3
+    expected = 28
+    answer = sum_of_digits_of_sum_of_factors(12)
+    print()
+    print('Test 3: Expected', expected)
+    print('Actual', answer)
+    # Test 4
+    expected = 15
+    answer = sum_of_digits_of_sum_of_factors(8)
+    print()
+    print('Test 4: Expected', expected)
+    print('Actual', answer)
 
 
 def sum_of_digits_of_sum_of_factors(n):
@@ -63,8 +87,8 @@ def sum_of_digits_of_sum_of_factors(n):
        *** ASK FOR AN EXPLANATION IF YOU DO NOT UNDERSTAND THE ABOVE. ***
     """
     ############################################################################
-    #  TODO (continued):  This function is PURPOSELY ** not implemented. **
-    #  TODO (continued):  DO NOT IMPLEMENT  sum_of_digits_of_sum_of_factors.
+    #  Done (continued):  This function is PURPOSELY ** not implemented. **
+    #  Done (continued):  DO NOT IMPLEMENT  sum_of_digits_of_sum_of_factors.
     #                     Just leave it as it is (with no code).
     ############################################################################
 
@@ -284,6 +308,12 @@ def run_test_problem2b():
 
 
 def problem2b(a, b, x):
+    total = 0
+    for k in range(a <= b):
+        if number_of_factors(k) >= x:
+            total = total + k
+        return total
+
     """
     What comes in:  Positive integers a, b and x, with a <= b.
     What goes out:
@@ -411,6 +441,7 @@ def run_test_problem2c():
 
 
 def problem1c(m):
+    for k in range(m):
     """
     What comes in:  An integer  m  that is at least 2.
     What goes out:
