@@ -43,6 +43,7 @@ def run_test_problem3():
 
 
 def problem3(point, length, delta, window):
+    point.attach_to(window)
     line = rg.Line(point, rg.Point(point.x, point.y + length))
     line.thickness = 3
     line.color = 'black'

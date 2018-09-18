@@ -441,7 +441,6 @@ def run_test_problem2c():
 
 
 def problem1c(m):
-    for k in range(m):
     """
     What comes in:  An integer  m  that is at least 2.
     What goes out:
@@ -463,6 +462,7 @@ def problem1c(m):
              11 13 17 19,
            and 11 + 13 + 17 + 19 = 60.
      """
+
     ############################################################################
     # TODO: 4. Implement and test this function.  See the IMPORTANT NOTE below!
     #          Tests have been written for you (above).
